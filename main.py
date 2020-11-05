@@ -26,6 +26,7 @@ class Skeleton(Enemy):
         target.health -= 2
 
 
+# debug code down here
 amuffin = Player("amuffin", 1, "you are mom", ["asdf", "asdf"])
 carl = Skeleton("carl", 1, "", [])
 
