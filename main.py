@@ -5,6 +5,7 @@ class Character:
         self.inventory = inventory
         self.skills = skills
         # TODO: add a "possibleskills" attribute?
+        # TODO: status effects
 
     def takedamage(self, damage):
         self.health -= damage
@@ -22,7 +23,7 @@ class Enemy(Character):
 
 
 class Skeleton(Enemy):
-    def bones(self, target):
+    def bonesattack(self, target):
         target.health -= 2
 
 
