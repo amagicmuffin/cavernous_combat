@@ -33,6 +33,6 @@ carl = Skeleton("carl", 1, "", [])
 
 amuffin.printcharsheet()
 
-carl.bones(amuffin)
+carl.bonesattack(amuffin)
 
 amuffin.printcharsheet()
