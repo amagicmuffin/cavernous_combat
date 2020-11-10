@@ -1,38 +1,28 @@
-class Character:
-    def __init__(self, name, health, inventory, skills):
-        self.name = name
-        self.health = health
-        self.inventory = inventory
-        self.skills = skills
-        # TODO: add a "possibleskills" attribute?
-        # TODO: status effects
+from Character import *
+from Tile import *
 
-    def takedamage(self, damage):
-        self.health -= damage
+# amuffin = Player("amuffin", 1, "you are mom", ["asdf", "asdf"])
+# carl = Skeleton("carl", 1, "", [])
 
-    def printcharsheet(self):  # TODO: used for debugging, make prettier later
-        print(vars(self))
+# amuffin.printcharsheet()
 
+# carl.bonesattack(amuffin)
 
-class Player(Character):
-    pass
+# amuffin.printcharsheet()
 
+theMap = [["#", "#", "#"],
+          ["#", ".", "#"],
+          ["#", ".", "#"],
+          ["#", "#", "#"]]
 
-class Enemy(Character):
-    pass
+wall = Tile("#", "A wall.")
+floor = Tile(".", "The floor.")
 
+tilesDict = {
+    "#": wall,
+    ".": floor
+}
 
-class Skeleton(Enemy):
-    def bonesattack(self, target):
-        target.health -= 2
+print(tilesDict["#"].desc)
+userInput = input('input: ')
 
-
-# debug code down here
-amuffin = Player("amuffin", 1, "you are mom", ["asdf", "asdf"])
-carl = Skeleton("carl", 1, "", [])
-
-amuffin.printcharsheet()
-
-carl.bonesattack(amuffin)
-
-amuffin.printcharsheet()
