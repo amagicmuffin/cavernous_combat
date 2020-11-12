@@ -14,7 +14,7 @@ class Character:
         self.is_burning = is_burning
         self.is_poisoned = is_poisoned
         self.is_withered = is_withered
-        # TODO: status effects
+        # TODO: more status effects later maybe (add buffs lol)
 
     def takedamage(self, damage):
         self.health -= damage
@@ -25,7 +25,14 @@ class Character:
 
 class Player(Character):
     def __init__(
-        self, name, health, is_stunned, is_burning, is_poisoned, is_withered, inventory
+        self,
+        name,
+        health,
+        inventory,
+        is_stunned=False,
+        is_burning=False,
+        is_poisoned=False,
+        is_withered=False,
     ):
         super().__init__(name, health, is_stunned, is_burning, is_poisoned, is_withered)
         self.inventory = inventory
